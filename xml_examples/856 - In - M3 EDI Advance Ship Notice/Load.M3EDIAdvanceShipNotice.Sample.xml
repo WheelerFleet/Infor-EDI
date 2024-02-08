@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<!-- Enable MION-16315; Feature list toggle: 2260793 -->
+<LoadM3EDIAdvanceShipNotice xmlns="http://schema.infor.com/InforOAGIS/2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" releaseID="9.2" versionID="2.14.2" systemEnvironmentCode="Production" languageCode="GB">
+	<ApplicationArea>
+		<Sender>
+			<LogicalID schemeVersionID="16.0.0.016">lid://infor.m3.m3</LogicalID>
+			<ComponentID schemeVersionID="16.0.0.20230320183423.11">M3BE</ComponentID>
+			<ConfirmationCode>OnError</ConfirmationCode>
+		</Sender>
+		<CreationDateTime>2023-05-31T12:41:48.668Z</CreationDateTime>
+	</ApplicationArea>
+	<DataArea>
+		<Load>
+			<!-- To handle the update functionality of Supplier Delivery Note, check if -->
+			<!-- PPS360 record exists by using PPS360MI/GetHead. If record exists, -->
+			<!-- use PPS360MI/DltHead. Once PPS360 record is deleted, -->
+			<!-- LoadAdvanceShipNotice may be generated again using the same -->
+			<!-- Delivery note number. -->
+			<AccountingEntityID>100_100</AccountingEntityID>
+			<LocationID>TX1</LocationID>
+			<ActionCriteria>
+				<ActionExpression actionCode="Replace"/>
+			</ActionCriteria>
+		</Load>
+		<M3EDIAdvanceShipNotice>
+			<!-- The field indicates the trading partner ID  -->
+			<TradingPartnerID>R639800</TradingPartnerID>
+			<AdvanceShipNoticeHeader>
+				<DocumentID>
+					<!-- The field indicates the Delivery note number. This must be unique in -->
+					<!-- combination with Supplier (SUNO). variationID="217144"  -->
+					<ID accountingEntity="100_100" location="TX1" lid="lid://infor.m3.m3">70000440-ASN1</ID>
+				</DocumentID>
+				<DisplayID>70000440-ASN1</DisplayID>
+				<DocumentDateTime>2023-10-23T13:04:31.000Z</DocumentDateTime>
+				<!-- If set to 'Shipper', use DocumentReference/DocumentID input to -->
+				<!-- populate SUDO. Else, populate PUSN. -->
+				<DocumentReference type="">
+					<DocumentID>
+						<!-- The field indicates the Delivery note reference (PUSN) if @type is -->
+						<!-- blank. If @type='Shipper', the field indicates the Delivery note -->
+						<!-- (SUDO). -->
+						<ID accountingEntity="100_100" location="TX1">R639800</ID>
+					</DocumentID>
+				</DocumentReference>
+				<WarehouseLocation>
+					<!-- The field indicates the warehouse of the company. (WHLO) -->
+					<ID>TX1</ID>
+				</WarehouseLocation>
+				<!-- The field indicates the actual ship date the goods delivered/received. (SHD4 / SHTM) -->
+				<ActualShipDateTime>2022-09-16T13:04:31.000Z</ActualShipDateTime>
+				<!-- The field indicates the Planned delivery date and time. (DLDT / DLTM)-->
+				<ScheduledDeliveryDateTime>2022-09-16T13:04:31.000Z</ScheduledDeliveryDateTime>
+				<!-- The field indicates the Gross weight for the entire ASN. (GRWE) -->
+				<GrossWeightMeasure unitCode="LB">1245.50</GrossWeightMeasure>
+				<!-- The field indicates the TransportaionMethodCode. (MODL) -->
+				<TransportationMethodCode/>
+				<ShipFromParty>
+					<PartyIDs>
+						<!-- The field indicates the supplier ID. The data can be translated in CRS885/CRS886. (SUNO)  -->
+						<ID>R639800</ID>
+					</PartyIDs>
+				</ShipFromParty>
+				<TransportationTerm>
+					<!-- The field indicates the delivery terms. (TEDL) -->	
+				<IncotermsCode>CUS</IncotermsCode>
+				</TransportationTerm>
+				<UserArea>
+				<Property><NameValue name="ISASender" >R639800</NameValue></Property>
+				<Property><NameValue name="ISAReceiver"  >R639800</NameValue></Property>
+ 
+				</UserArea>
+			</AdvanceShipNoticeHeader>
+			<!-- Per Item on ANS -->
+			<AdvanceShipNoticeItem>
+				<ItemID>
+					<!-- The field indicates the item number -->
+					<!-- @schemeName Set to 'System' or blank, use ItemID/ID as M3 Item number. -->
+					<!-- Set to 'Supplier' if ItemID used SITE. -->
+					<ID schemeName="System">MISC-FIXED-ASSE</ID>
+				</ItemID>
+				<ShippedQuantity unitCode="EA">10.00</ShippedQuantity>
+				<PurchaseOrderReference>
+					<DocumentID>
+						<!-- The field indicates the reference purchase order number -->
+						<ID>70000440</ID>
+					</DocumentID>
+					<!-- The field indicates the concantenation of order line and line suffix -->
+					<!-- where the last 3 digits is the line sufix. -->
+					<LineNumber>1000</LineNumber>
+				</PurchaseOrderReference>
+				<!-- If set to 'Shipper', use DocumentReference/DocumentID input to -->
+				<!-- populate SUDO. Else, populate PUSN. -->
+				<DocumentReference type="Shipper">
+					<DocumentID>
+						<!-- The field indicates the Delivery note reference (PUSN) if @type is -->
+						<!-- blank. If @type='Shipper', the field indicates the Delivery note -->
+						<!-- (SUDO) -->
+						<ID accountingEntity="100_100" location="TX1">R639800</ID>
+					</DocumentID>
+				</DocumentReference>
+			</AdvanceShipNoticeItem>
+			<!-- Per Package -->
+			<AdvanceShipNoticeUnit>
+				<ContainerID>FEDEX1234</ContainerID>
+				<!-- The field indicates the Gross weight for the ASN -->
+				<GrossWeightMeasure unitCode="LB">115.50</GrossWeightMeasure>
+				<ShipmentUnitItem>
+					<ItemID>
+						<!-- The field indicates the item number -->
+						<!-- @schemeName Set to 'System' or blank, use ItemID/ID as M3 Item number. -->
+						<!-- Set to 'Supplier' if ItemID used SITE. -->
+						<ID schemeName="System">MISC-FIXED-ASSE</ID>
+					</ItemID>
+				</ShipmentUnitItem>
+			</AdvanceShipNoticeUnit>
+		</M3EDIAdvanceShipNotice>
+	</DataArea>
+</LoadM3EDIAdvanceShipNotice>

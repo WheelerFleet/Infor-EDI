@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EDI855>
+  <Header>
+    <PONumber>40001001</PONumber>
+  </Header>
+  <Lines>
+    <Line>
+      <POLineNumber>1</POLineNumber>
+      <POSubLineNumber>0</POSubLineNumber>
+      <VendorItemNumber>500793-001</VendorItemNumber>
+      <ConfirmedQty>475</ConfirmedQty>
+      <Unit>EA</Unit>
+      <ConfirmedPurchasePrice>1.08000</ConfirmedPurchasePrice>
+      <ConfirmedDeliveryDate>20240107</ConfirmedDeliveryDate>
+    </Line>
+    <Line>
+      <POLineNumber>2</POLineNumber>
+      <POSubLineNumber>0</POSubLineNumber>
+      <VendorItemNumber>500793-001</VendorItemNumber>
+      <ConfirmedQty>475</ConfirmedQty>
+      <Unit>EA</Unit>
+      <ConfirmedPurchasePrice>1.08000</ConfirmedPurchasePrice>
+      <ConfirmedDeliveryDate>20240107</ConfirmedDeliveryDate>
+    </Line>
+    <Line>
+      <POLineNumber>3</POLineNumber>
+      <POSubLineNumber>0</POSubLineNumber>
+      <VendorItemNumber>500793-001</VendorItemNumber>
+      <ConfirmedQty>475</ConfirmedQty>
+      <Unit>EA</Unit>
+      <ConfirmedPurchasePrice>1.08000</ConfirmedPurchasePrice>
+      <ConfirmedDeliveryDate>20240107</ConfirmedDeliveryDate>
+    </Line>
+  </Lines>
+</EDI855>
