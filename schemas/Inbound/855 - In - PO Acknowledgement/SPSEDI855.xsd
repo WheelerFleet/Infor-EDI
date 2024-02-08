@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <element name="SPSEDI855">
+    <complexType>
+      <sequence>
+        <element name="EDI855">
+          <complexType>
+            <sequence>
+              <element name="Header">
+                <complexType>
+                  <sequence>
+                    <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="PONumber" type="xs:string"/>
+                  </sequence>
+                </complexType>
+              </element>
+              <element name="Lines">
+                <complexType>
+                  <sequence>
+                    <element maxOccurs="unbounded" minOccurs="1" name="Line">
+                      <complexType>
+                        <sequence>
+                          <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="POLineNumber" type="xs:integer"/>
+                          <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="POSubLineNumber" type="xs:integer"/>
+                          <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="VendorItemNumber" type="xs:string"/>
+                          <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ConfirmedQty" type="xs:integer"/>
+                          <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="Unit" type="xs:string"/>
+                          <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ConfirmedPurchasePrice" type="xs:float"/>
+                          <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ConfirmedDeliveryDate" type="xs:date"/>
+                        </sequence>
+                      </complexType>
+                    </element>
+                  </sequence>
+                </complexType>
+              </element>
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>
