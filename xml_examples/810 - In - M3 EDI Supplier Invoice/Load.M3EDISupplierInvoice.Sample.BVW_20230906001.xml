@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LoadM3EDISupplierInvoice xmlns="http://schema.infor.com/InforOAGIS/2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" releaseID="9.2" versionID="2.14.3" systemEnvironmentCode="Production" languageCode="GB">
+	<ApplicationArea>
+		<Sender>
+			<LogicalID schemeVersionID="16.0.0.021">lid://infor.m3.m3</LogicalID>
+			<ComponentID schemeVersionID="16.0.0.20230621154344.8">ExternalEDI</ComponentID>
+			<ConfirmationCode>OnError</ConfirmationCode>
+		</Sender>
+		<CreationDateTime>2023-09-05T22:02:39.426Z</CreationDateTime>
+	</ApplicationArea>
+	<DataArea>
+		<Load>
+			<AccountingEntityID>100_100</AccountingEntityID>
+			<ActionCriteria>
+				<ActionExpression actionCode="Replace"/>
+			</ActionCriteria>
+		</Load>
+		<M3EDISupplierInvoice>
+			<TradingPartnerID>R541114</TradingPartnerID>
+			<SupplierInvoiceHeader>
+				<!-- /LoadM3EDISupplierInvoice/DataArea/M3EDISupplierInvoice/SupplierInvoiceHeader/PurchaseOrderReference/DocumentID/ID -->
+				<DocumentID>
+					<ID>BVW_20230907003</ID>
+				</DocumentID>
+		
+				<DocumentDateTime>2023-09-03T00:00:00.000Z</DocumentDateTime>
+				<TotalAmount  currencyID="USD">144.00</TotalAmount>
+				<SupplierParty>
+					<PartyIDs>
+						<ID>R541114</ID>
+					</PartyIDs>
+				</SupplierParty>
+				<CustomerParty>
+					<Contact>
+						<ID>K_OCONNOR</ID>
+					</Contact>
+				</CustomerParty>
+				<StructuredCreditorReference>R541114 BVW_20230907003</StructuredCreditorReference>
+				<PurchaseOrderReference><DocumentID>
+					<ID>BVW_20230907003</ID>
+				</DocumentID></PurchaseOrderReference>
+				<PaymentTerm>
+					<Term>
+						<DueDateTime>2023-10-11</DueDateTime>
+					</Term>
+				</PaymentTerm>
+				<!-- <Charge type="Allowance" sequence="1">  -->
+					<!-- <ID>F10001</ID> -->
+					<!-- <Description>Freight</Description> -->
+					<!-- <Amount currencyID="USD">25.25</Amount> -->
+				<!-- </Charge> -->
+				<UserArea/>
+				<Status/>
+			</SupplierInvoiceHeader>
+			<SupplierInvoiceLine>
+				<Item>
+					<ItemID>
+						<ID>1L2Z6214AB</ID>
+					</ItemID>
+				</Item>
+				<Quantity>12</Quantity>
+				<UnitPrice>
+					<Amount currencyID="USD">12</Amount>
+					<PerQuantity unitCode="EA">1</PerQuantity>
+				</UnitPrice>
+				<PurchaseOrderReference>
+					<DocumentID>
+						<ID>10000917</ID>
+					</DocumentID>
+					<LineNumber>3</LineNumber>
+					<SubLineNumber>0</SubLineNumber>
+				</PurchaseOrderReference>
+			</SupplierInvoiceLine>
+		</M3EDISupplierInvoice>
+	</DataArea>
+</LoadM3EDISupplierInvoice>
