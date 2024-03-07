@@ -9,7 +9,19 @@
               <element name="Header">
                 <complexType>
                   <sequence>
+                    <!--Wheeler Purchase Order Number-->
                     <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="PONumber" type="xs:string"/>
+                    <!--Wheeler Freight Terms Code-->
+                    <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="FreightTerms" type="xs:string"/>
+                    <!--Status can be a confirmation code, or rejection code.
+                      10 - Receieved not confirmed
+                      20 - Confirmed
+                      30 - Partially Confirmed
+                      40 - Partially Rejected
+                      50 - Rejected
+                      60 - Cancelled
+                    -->
+                    <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="Status" type="xs:string"/>
                   </sequence>
                 </complexType>
               </element>
@@ -19,13 +31,22 @@
                     <element maxOccurs="unbounded" minOccurs="1" name="Line">
                       <complexType>
                         <sequence>
+                          <!--Wheeler PO Line Number-->
                           <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="POLineNumber" type="xs:integer"/>
-                          <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="POSubLineNumber" type="xs:integer"/>
+                          <!--PO Sub Line Number, Optional if included in POLineNumber-->
+                          <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="POSubLineNumber" type="xs:integer" minOccurs="0" maxOccurs="1" />
+                          <!--Vendor Item Number, should match PO Vendor Item number unless superseded -->
                           <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="VendorItemNumber" type="xs:string"/>
+                          <!--Vendor Qty Confirmed for this PO Line-->
                           <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ConfirmedQty" type="xs:integer"/>
+                          <!--Vendor Unit of Measure for this PO Line-->
                           <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="Unit" type="xs:string"/>
+                          <!--Vendor Unit Price for this PO Line-->
                           <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ConfirmedPurchasePrice" type="xs:float"/>
+                          <!--Vndor Confirmed Delivery Date for this PO Line-->
                           <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ConfirmedDeliveryDate" type="xs:date"/>
+                          <!--Status can be a confirmation code, or rejection code.  Should use mapped values as in header-->
+                          <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="Status" type="xs:string"/> 
                         </sequence>
                       </complexType>
                     </element>

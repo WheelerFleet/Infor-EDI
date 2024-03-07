@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SyncM3EDIAdvanceShipNotice xmlns="http://schema.infor.com/InforOAGIS/2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ releaseID="9.2" versionID="2.14.2" systemEnvironmentCode="Production" languageCode="GB">
+	<ApplicationArea>
+		<Sender>
+			<LogicalID schemeVersionID="16.0.0.016">lid://infor.m3.m3</LogicalID>
+			<ComponentID schemeVersionID="16.0.0.20230320183423.11">M3BE</ComponentID>
+			<ConfirmationCode>OnError</ConfirmationCode>
+		</Sender>
+		<CreationDateTime>2023-05-31T12:41:48.668Z</CreationDateTime>
+  
+	</ApplicationArea>
+	<DataArea> 
+		<Sync>
+			<AccountingEntityID>100_100</AccountingEntityID>
+			<LocationID>TX1</LocationID>
+			<ActionCriteria>
+				<ActionExpression actionCode="Replace"/>
+			</ActionCriteria>
+		</Sync>
+		<M3EDIAdvanceShipNotice>  
+	 <TradingPartnerID>BVW</TradingPartnerID>
+			<M3EDIAdvanceShipNoticeHeader>
+				<DocumentID>
+					<ID accountingEntity="100_100" location="TX1" variationID="217144" lid="lid://infor.m3.m3">WM               1000000020850</ID>
+				</DocumentID>
+				<AlternateDocumentID>
+					<ID>0000002085</ID>
+				</AlternateDocumentID>
+				<DisplayID>0000002085</DisplayID>
+				<LastModificationDateTime>2023-05-31T12:39:55.618Z</LastModificationDateTime>
+				<LastModificationPerson>
+					<IDs>
+						<ID accountingEntity="100_100">V_ZALKE</ID>
+					</IDs>
+				</LastModificationPerson>
+				<DocumentDateTime>2022-09-16T13:04:31.000Z</DocumentDateTime>
+				<DocumentReference type="Production">
+					<DocumentID>
+						<ID accountingEntity="100_100" location="TX1">0000002085</ID>
+					</DocumentID>
+				</DocumentReference>
+				<Status>
+					<Code listID="ShipmentStatus">Cancelled</Code>
+				</Status>
+				<CountryOfOriginCode>US</CountryOfOriginCode>
+				<ShipFromParty>
+					<Location>
+						<Address>
+							<AddressLine sequence="1">3275 W Trinity Blvd</AddressLine>
+							<AddressLine sequence="2">Suite 150</AddressLine>
+							<AddressLine sequence="3">Grand Prairie TX 75050</AddressLine>
+							<AddressLine sequence="4">United States</AddressLine>
+							<CountryCode listID="Countries">US</CountryCode>
+							<PostalCode>75050</PostalCode>
+						</Address>
+					</Location>
+				</ShipFromParty>
+				<ShipToParty>
+					<Location>
+						<ID accountingEntity="100_100">TX1</ID>
+						<Name>Ultra Seating</Name>
+					</Location>
+				</ShipToParty>
+			</M3EDIAdvanceShipNoticeHeader>
+			<M3EDIAdvanceShipNoticeItem>
+				<ItemID>
+					<ID accountingEntity="100_100">501646-001</ID>
+				</ItemID>
+				<ShippedQuantity>0.00</ShippedQuantity>
+				<ShippedBaseUOMQuantity unitCode="EA">0.00</ShippedBaseUOMQuantity>
+				<DocumentReference type="Production">
+					<DocumentID>
+						<ID accountingEntity="100_100" location="TX1">0000002085</ID>
+					</DocumentID>
+					<LineNumber>000</LineNumber>
+				</DocumentReference>
+			</M3EDIAdvanceShipNoticeItem>
+		</M3EDIAdvanceShipNotice>
+	</DataArea>
+</SyncM3EDIAdvanceShipNotice>
