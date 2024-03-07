@@ -24,7 +24,7 @@
 				</DocumentID>
 		
 				<DocumentDateTime>2023-09-03T00:00:00.000Z</DocumentDateTime>
-				<TotalAmount  currencyID="USD">144.00</TotalAmount>
+				<TotalAmount  currencyID="USD">.01</TotalAmount>
 				<SupplierParty>
 					<PartyIDs>
 						<ID>R541114</ID>
@@ -47,7 +47,7 @@
 				<!-- <Charge type="Allowance" sequence="1">  -->
 					<!-- <ID>F10001</ID> -->
 					<!-- <Description>Freight</Description> -->
-					<!-- <Amount currencyID="USD">25.25</Amount> -->
+					<!-- <Amount currencyID="USD">.01</Amount> -->
 				<!-- </Charge> -->
 				<UserArea/>
 				<Status/>
@@ -60,7 +60,7 @@
 				</Item>
 				<Quantity>12</Quantity>
 				<UnitPrice>
-					<Amount currencyID="USD">12</Amount>
+					<Amount currencyID="USD">.01</Amount>
 					<PerQuantity unitCode="EA">1</PerQuantity>
 				</UnitPrice>
 				<PurchaseOrderReference>
