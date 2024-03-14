@@ -30,6 +30,7 @@
 	<xs:complexType name="LoadM3EDISupplierInvoiceDataAreaType">
 		<xs:sequence>
 			<xs:element ref="Load" />
+			<xs:element ref="M3EDISupplierInvoice"  maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>

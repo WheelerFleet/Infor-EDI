@@ -14,8 +14,12 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schema.infor.com/InforOAGIS/2"
 	targetNamespace="http://schema.infor.com/InforOAGIS/2"
 	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
 	<xs:include schemaLocation="Meta.xsd" />
+	<xs:include schemaLocation="M3EDIPurchaseOrder.xsd" />
+
 	<xs:element name="LoadM3EDIPurchaseOrder" type="LoadM3EDIPurchaseOrderType" />
+
 	<xs:complexType name="LoadM3EDIPurchaseOrderType">
 		<xs:complexContent>
 			<xs:extension base="BusinessObjectDocumentType">
@@ -26,10 +30,11 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	
 	<xs:complexType name="LoadM3EDIPurchaseOrderDataAreaType">
 		<xs:sequence>
 			<xs:element ref="Load" />
+			<xs:element ref="M3EDIPurchaseOrder"  maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>
-

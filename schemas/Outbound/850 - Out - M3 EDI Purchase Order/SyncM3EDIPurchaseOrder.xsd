@@ -30,6 +30,7 @@
 	<xs:complexType name="SyncM3EDIPurchaseOrderDataAreaType">
 		<xs:sequence>
 			<xs:element ref="Sync" />
+			<xs:element ref="M3EDIPurchaseOrder" />
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>
