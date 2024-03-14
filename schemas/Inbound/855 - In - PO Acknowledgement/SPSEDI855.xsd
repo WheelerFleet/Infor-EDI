@@ -14,16 +14,15 @@
                     <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="SupplierCode" type="xs:string" />
                     <!--Wheeler Purchase Order Number-->
                     <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="PONumber" type="xs:string" />
-                    <!--Wheeler
-                    Freight Terms Code-->
+                    <!--Wheeler Freight Terms Code-->
                     <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="FreightTerms" type="xs:string" minOccurs="0" />
                     <!--Wheeler Payment Terms Code-->
                     <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="PaymentTerms" type="xs:string" minOccurs="0" />
                     <!--Status can be a confirmation code, or rejection code.
-                      10 - Confirmed Complete
-                      20 - Partially Confirmed - Used on Updates to confirm some lines, but not all
-                      30 - Partially Rejected
-                      40 - Cancelled - Rejects entire PO on header
+                      10 - Confirmed Complete - Used on Updates to confirm all lines, lines still required
+                      20 - Partially Confirmed - Used on Updates to confirm some lines
+                      30 - Partially Rejected - Used on Updates to reject some lines
+                      40 - Cancelled - Rejects entire PO on header - lines not required
                     -->
                     <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="Status"  type="xs:string" />
                     <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="CustomerOrderNumber" type="xs:string" />
@@ -48,7 +47,7 @@
               <element name="Lines">
                 <complexType>
                   <sequence>
-                    <element maxOccurs="unbounded" minOccurs="1" name="Line">
+                    <element maxOccurs="unbounded" minOccurs="0" name="Line">
                       <complexType>
                         <sequence>
                           <!--Wheeler PO Line Number-->
@@ -57,15 +56,15 @@
                           <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="POSubLineNumber" type="xs:integer" minOccurs="0" maxOccurs="1" />
                           <!--Vendor Item Number, should match PO Vendor Item number unless superseded -->
                           <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="VendorItemNumber" type="xs:string" />
-                          <!--Vendor Qty Confirmed for this PO Line-->
-                          <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ConfirmedQty" type="xs:integer" />
+                          <!--Vendor Qty for this PO Line, status determines type-->
+                          <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="LineQty" type="xs:integer" />
                           <!--Vendor Unit of Measure for this PO Line-->
                           <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="Unit" type="xs:string" />
                           <!--Vendor Unit Price for this PO Line-->
                           <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ConfirmedPurchasePrice" type="xs:float" />
                           <!--Confirmed Delivery Date for this PO Line-->
                           <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="ConfirmedDeliveryDate" type="xs:date" />
-                          <!--Status can be a confirmation code, or rejection code.  Should use mapped values as in header-->
+                          <!--Status can be a confirmation code, or rejection code.-->
                           <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="Status" type="xs:string" />
                           <!--UPC Code Optional-->
                           <element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="UPCCode" type="xs:string" />

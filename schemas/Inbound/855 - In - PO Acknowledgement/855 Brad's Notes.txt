@@ -1,0 +1,23 @@
+Recv:  Review qty, part no, price, 
+Review any discrepancy – go to appropriate dept
+MOQ – Update for next time
+Suppersession – update for next time, validate for new item if needed
+Pricing – adjust sales price to Wheeler customer
+Pricing for postal – review for lower price somewhere else – review the pri-two source
+Pri-two – review potential OOS to determine additional purchase reqd
+
+If errors, go to hold queue
+Review
+Update message data with decision
+Press “go”
+Update PO with updated values
+Note “revised” on revised PO
+PO status = 35
+Send PO back to vendor
+
+If no errors, update PO with status 35
+
+Always ship date updates automatically
+MRP to highlight discrepancies
+
+can system “cleanup” the part numbers?
